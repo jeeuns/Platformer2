@@ -13,6 +13,7 @@ class Platformer extends Phaser.Scene {
         this.PARTICLE_VELOCITY = 50;
         this.SCALE = 3.0;
         this.SCORE = 0;
+
     }
 
     create() {
@@ -82,13 +83,15 @@ class Platformer extends Phaser.Scene {
         // them into Arcade Physics sprites (STATIC_BODY, so they don't move) 
         this.physics.world.enable(this.coins, Phaser.Physics.Arcade.STATIC_BODY);
 
+        this.physics.world.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+
         // Create a Phaser group out of the array this.coins
         // This will be used for collision detection below.
         this.coinGroup = this.add.group(this.coins);
 
         // set up player avatar x,y
         my.sprite.player = this.physics.add.sprite(120, 645, "platformer_characters", "tile_0000.png");
-        my.sprite.player.setCollideWorldBounds(false); //was originally true
+        my.sprite.player.setCollideWorldBounds(true); //was originally true
 
         // Enable collision handling
         this.physics.add.collider(my.sprite.player, this.groundLayer);
