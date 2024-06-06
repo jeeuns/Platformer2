@@ -1,0 +1,14 @@
+{ "columns":6,
+ "image":"SmokeFX Lite SpriteSheet 3A-5.png",
+ "imageheight":64,
+ "imagewidth":384,
+ "margin":0,
+ "name":"jump",
+ "spacing":0,
+ "tilecount":6,
+ "tiledversion":"1.10.2",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":"1.10"
+}
